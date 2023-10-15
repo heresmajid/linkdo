@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+YouTube Video Download Page
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <form action="{{ url_for('download_video') }}" method="POST" class="mt-5">
+        <div class="text-center">
+            <h1 class="d-inline-block fw-bold"><span class="text-danger">YouTube</span> Video Downloader</h1>
+            <div class="d-flex w-50 mx-auto">
+                <input type="url" name="vid_url" id="vid_url" class="form-control form-control-lg" required>
+                <input type="submit" class="btn btn-outline-info" value="Download">
+            </div>
+        </div>
+    </form>
+    {% if data %}
+    <div class="container text-center mt-5 w-50">
+        <img class="img-thumbnail " src="{{ data.thumbnail }}" alt="">
+        <h1 class="lead">{{ data.title }}</h1>
+        <p class="lead fw-bold alert alert-success">Downloaded Successfully</p>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

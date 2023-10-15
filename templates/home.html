@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block main %}
+<div class="container mt-3">
+    <div class="row text-center justify-content-center fs-3">
+      <div class="col-md-6">
+        <a class="nav-link p-3 border-bottom border-danger" href="{{ url_for('youtube_video') }}">YouTube Video Download</a>
+      </div>
+      <div class="col-md-6">
+        <a class="nav-link p-3 border-bottom border-danger" href="{{ url_for('youtube_audio') }}">YouTube Audio Download</a>
+      </div>
+    </div>
+  </div>
+  
+{% endblock %}
